@@ -83,7 +83,7 @@ get_header(); ?>
 		</p>
 	</div></div>
 	<header class="entry-header">
-		<h1 class="entry-title">Categories</h1>
+		<h1 class="entry-title">Types of Projects</h1>
 	</header><!-- .entry-header -->
 </article><!-- #project-tag-cloud -->
 
