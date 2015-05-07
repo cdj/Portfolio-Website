@@ -47,12 +47,15 @@ get_header(); ?>
 					$paged = 1;
 				endif;
 
-				$posts_per_page = get_option( 'jetpack_portfolio_posts_per_page', '9' );
+				$posts_per_page = get_option( 'jetpack_portfolio_posts_per_page', '-1' ); /* '9' );*/
 
 				$args = array(
 					'post_type'      => 'jetpack-portfolio',
 					'paged'          => $paged,
-					'posts_per_page' => $posts_per_page,
+					'posts_per_page' => -1, /* $posts_per_page, */
+					/* 'posts_per_archive_page' => 9, */
+					'orderby'        => 'rand',
+					'tag' => 'golden',
 				);
 
 				$project_query = new WP_Query ( $args );
@@ -61,23 +64,26 @@ get_header(); ?>
 			?>
 
 			<div class="projects clear">
+
 <?php $portfolioTypeCloudArgs = array(
-	'smallest'                  => 10,
-	'largest'                   => 25,
-	'unit'                      => 'pt',
+	'smallest'                  => 1,
+	'largest'                   => 3,
+	'unit'                      => 'vw',
 	'format'                    => 'flat',
 	'separator'                 => "\n",
 	'orderby'                   => 'name',
 	'order'                     => 'ASC',
 	'taxonomy'                  => 'jetpack-portfolio-type',
-	'child_of'                  => null, // see Note!
+	'child_of'                  => null,
 ); ?>
-<article id="portfolio-type-cloud" class="post-575 jetpack-portfolio type-jetpack-portfolio status-publish has-post-thumbnail hentry tag-golden jetpack-portfolio-type-programming jetpack-portfolio-type-ux jetpack-portfolio-tag-chat jetpack-portfolio-tag-html5 jetpack-portfolio-tag-mysql jetpack-portfolio-tag-new-media jetpack-portfolio-tag-php jetpack-portfolio-tag-prototype jetpack-portfolio-tag-second-screen jetpack-portfolio-tag-sketches jetpack-portfolio-tag-speculative-design">
-	<div class="entry-thumbnail sketch-landscape">
+<article id="portfolio-type-cloud" class="jetpack-portfolio type-jetpack-portfolio hentry">
+	<div class="entry-thumbnail sketch-landscape"><div>
+		<p>
 		<?php wp_tag_cloud( $portfolioTypeCloudArgs ); ?>
-	</div>
+		</p>
+	</div></div>
 	<header class="entry-header">
-		<h1 class="entry-title">Tags</h1>
+		<h1 class="entry-title">Categories</h1>
 	</header><!-- .entry-header -->
 </article><!-- #project-tag-cloud -->
 

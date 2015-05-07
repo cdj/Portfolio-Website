@@ -14,14 +14,14 @@
 function sketch_jetpack_setup() {
 	add_theme_support( 'infinite-scroll', array(
 		'container'      => 'main',
-        'posts_per_page' => 9,
+        'posts_per_page' => 12, /* 9 */
 		'footer'         => 'page',
 		'render'         => 'sketch_infinite_scroll_render',
 	) );
 
 	add_theme_support( 'featured-content', array(
 	    'filter'     => 'sketch_get_featured_posts',
-	    'max_posts'  => 10,
+	    'max_posts'  => 12, /* 10 */
 	    'post_types' => array( 'post', 'page', 'jetpack-portfolio' ),
 	) );
 
