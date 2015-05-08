@@ -1,0 +1,98 @@
+@import  "http://fonts.googleapis.com/css?family=Gloria+Hallelujah";
+
+/* add custom domain tumblr */
+.social-links ul a[href*="carlj.us"]:before {
+	content: "\f214";
+}
+
+/* there are no genericon symbols for DA, so using a paintbrush icon */
+.social-links ul a[href*="deviantart.com"]:before {
+	content: "\f506";
+}
+
+/* hide the "more projects" section since the "related posts" section is on too */
+nav.navigation.project-navigation {
+	display: none;
+}
+
+/* custom tag cloud for portfolio project types */
+#portfolio-type-cloud {
+	text-align: center;
+}
+
+#portfolio-type-cloud:hover {
+	opacity: 1 !important;
+	-webkit-transition: none !important;
+	-moz-transition: none !important;
+	-o-transition: none !important;
+	transition: none !important;
+}
+
+#portfolio-type-cloud:hover a {
+	color: #999999;
+}
+
+#portfolio-type-cloud a {
+	color: #999999 !important;
+}
+
+#portfolio-type-cloud a:hover {
+	color: blue !important;
+	-webkit-transition: color .2s ease-in-out;
+	-moz-transition: color .2s ease-in-out;
+	-o-transition: color .2s ease-in-out;
+	transition: color .2s ease-in-out;
+}
+
+/* vertically centering tag cloud */
+#portfolio-type-cloud > div > div {
+	text-align: center;
+	display: table;
+	overflow: hidden;
+	margin: 0 auto;
+	height: auto;
+	max-width: 100%;
+	position: absolute;
+	top: 0;
+	height: 100%;
+}
+
+#portfolio-type-cloud > div > div > p {
+	display: table-cell;
+	vertical-align: middle;
+	width: 100%;
+	margin: 0 auto;
+	line-height: 3vw;
+}
+
+/* hide the tag cloud on small screens */
+@media screen and (max-width: 50em) {
+	#portfolio-type-cloud {
+		display: none;
+	}
+}
+
+/* header mods */
+/*  style subtitle */
+.site-description {
+	font-family: 'Gloria Hallelujah', cursive;
+	font-size: 20px;
+	text-transform: none;
+	margin: 10px 0 10px 25px;
+	display: block;
+}
+
+/*  arrow indicator next to About menu item */
+@media screen and ( min-width: 1281px ) {
+	.main-navigation ul > li a[href*="about"]:after {
+		font-family: "Genericons";
+	/*font-size: 50%;*/
+		content: "\f431";
+	}
+	
+	.main-navigation ul li:hover > a[href*="about"]:after {
+		font-family: "Genericons";
+	/*font-size: 50%;*/
+		content: "\f432";
+	}
+}
